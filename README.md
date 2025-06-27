@@ -1,6 +1,6 @@
-# React E-commerce Platform
+# Buyble - Modern E-commerce Platform
 
-A modern, responsive e-commerce frontend built with React and Next.js, featuring:
+A modern, responsive e-commerce platform built with React and Next.js, featuring:
 
 ## ✨ Features
 

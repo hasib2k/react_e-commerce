@@ -39,26 +39,26 @@ const Footer: React.FC = () => {
   return (
     <footer className="py-8 px-4 mt-16">
       <div className="max-w-7xl mx-auto">
-        <GlassCard>
+        <GlassCard className="backdrop-blur-2xl bg-black/40 border border-black/50">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-1">
               <Link href="/" className="inline-block">
                 <h3 className="text-3xl font-bold font-museo text-white mb-4">
-                  <span className="text-primary">E</span>-Commerce
+                  <span className="text-primary">B</span>uyble
                 </h3>
               </Link>
               <p className="text-gray-300 mb-6 font-museo leading-relaxed">
-                Modern e-commerce platform built with React and Next.js, featuring 
-                responsive design, state management, and a beautiful glassmorphism interface.
+                Buyble - Your premier destination for premium electronics, accessories, and gadgets. 
+                Modern e-commerce platform featuring responsive design and glassmorphism interface.
               </p>
               
               {/* Contact Info */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <a href="mailto:support@ecommerce.com" className="text-gray-300 hover:text-primary transition-colors font-museo">
-                    support@ecommerce.com
+                  <a href="mailto:support@buyble.com" className="text-gray-300 hover:text-primary transition-colors font-museo">
+                    support@buyble.com
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
           <div className="border-t border-white border-opacity-20 mt-8 pt-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-gray-300 font-museo text-center md:text-left">
-                © {currentYear} E-Commerce Platform. All rights reserved. Built with React & Next.js
+                © {currentYear} Buyble. All rights reserved. Built with React & Next.js
               </p>
               <div className="flex space-x-6">
                 <Link href="/privacy" className="text-white hover:text-primary transition-all duration-300 font-museo text-sm px-3 py-2 rounded-lg bg-gradient-to-r from-black/10 to-black/20 hover:from-black/30 hover:to-black/40 backdrop-blur-sm relative overflow-hidden group">

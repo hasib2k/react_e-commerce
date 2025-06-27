@@ -148,7 +148,7 @@ const TermsOfService: React.FC = () => {
                 By accessing or using our website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you may not use our services.
               </p>
               <p className="mb-6">
-                These terms constitute a legally binding agreement between you and E-Commerce Platform. We reserve the right to update these terms at any time, and your continued use of our services constitutes acceptance of any changes.
+                These terms constitute a legally binding agreement between you and Buyble. We reserve the right to update these terms at any time, and your continued use of our services constitutes acceptance of any changes.
               </p>
               <p>
                 If you are using our services on behalf of an organization, you represent that you have the authority to bind that organization to these terms.

@@ -1,8 +1,12 @@
 import React from 'react';
 import GlassCard from '@/components/GlassCard';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import { CartProvider, useCart } from '@/context/CartContext';
 import { Award, Users, Globe, TrendingUp, Shield, Star, Handshake, Target } from 'lucide-react';
 
-const BrandsPage: React.FC = () => {
+const BrandsContent: React.FC = () => {
+  const { state } = useCart();
   const brandPartners = [
     {
       name: 'TechCore',
@@ -66,7 +70,9 @@ const BrandsPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen py-16 px-4">
+    <div className="min-h-screen bg-background">
+      <Navbar cartCount={state.itemCount} />
+      <div className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -245,8 +251,17 @@ const BrandsPage: React.FC = () => {
           </div>
         </GlassCard>
       </div>
+      </div>
+      
+      <Footer />
     </div>
   );
 };
 
-export default BrandsPage;
+export default function BrandsPage() {
+  return (
+    <CartProvider>
+      <BrandsContent />
+    </CartProvider>
+  );
+}

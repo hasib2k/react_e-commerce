@@ -59,7 +59,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
             className="w-full p-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white focus:outline-none focus:border-primary"
           >
             {categories.map((category) => (
-              <option key={category} value={category} className="bg-secondary text-white">
+              <option key={category} value={category} className="bg-gray-800 text-white">
                 {category.charAt(0).toUpperCase() + category.slice(1)}
               </option>
             ))}

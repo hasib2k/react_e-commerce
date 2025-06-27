@@ -48,12 +48,12 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount = 0 }) => {
 
   return (
     <>
-      <nav className="sticky top-0 z-40 p-2 sm:p-4">
-        <GlassCard className="flex justify-between items-center backdrop-blur-xl bg-black/20 border border-black/30 shadow-2xl">
+      <nav className="sticky top-0 z-50 p-2 sm:p-4">
+        <GlassCard className="flex justify-between items-center backdrop-blur-2xl bg-black/30 border border-black/40 shadow-2xl">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-4">
             <h1 className="text-xl sm:text-2xl font-bold font-museo text-white">
-              <span className="text-primary">E</span>-Commerce
+              <span className="text-primary">B</span>uyble
             </h1>
           </Link>
 
@@ -76,13 +76,13 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount = 0 }) => {
                     
                     {dropdownOpen === link.label && (
                       <div className="absolute top-full left-0 mt-2 w-56 z-50">
-                        <GlassCard className="backdrop-blur-xl bg-black/20 border border-black/30 shadow-xl">
+                        <GlassCard className="backdrop-blur-2xl bg-black/40 border border-black/50 shadow-2xl">
                           <div className="py-2">
                             {link.dropdown.map((item) => (
                               <Link
                                 key={item.href}
                                 href={item.href}
-                                className="flex items-center space-x-3 px-4 py-3 text-white hover:text-primary hover:bg-black/20 transition-all duration-300 font-museo"
+                                className="flex items-center space-x-3 px-4 py-3 text-white hover:text-primary hover:bg-black/30 transition-all duration-300 font-museo"
                                 onClick={() => setDropdownOpen(null)}
                               >
                                 <item.icon className="w-4 h-4" />
@@ -175,7 +175,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount = 0 }) => {
         {/* Mobile/Tablet Menu */}
         {isMobileMenuOpen && (
           <div className="block lg:hidden mt-2 sm:mt-4 transition-all duration-300 ease-in-out">
-            <GlassCard className="backdrop-blur-xl bg-black/20 border border-black/30 shadow-xl overflow-hidden">
+            <GlassCard className="backdrop-blur-2xl bg-black/40 border border-black/50 shadow-2xl overflow-hidden">
               <div className="flex flex-col space-y-1 p-2">
                 {navLinks.map((link, index) => (
                   <div key={link.href}>

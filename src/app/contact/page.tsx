@@ -40,13 +40,13 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: 'Email',
-      content: 'support@ecommerce.com',
+      content: 'support@buyble.com',
       description: 'We respond within 24 hours'
     },
     {
       icon: MapPin,
       title: 'Address',
-      content: '123 Commerce Street',
+      content: '123 Buyble Plaza',
       description: 'New York, NY 10001'
     },
     {

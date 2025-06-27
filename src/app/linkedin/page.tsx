@@ -91,7 +91,7 @@ const LinkedInPage: React.FC = () => {
                   <Building className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-white font-museo font-bold text-lg">E-Commerce Tech Inc.</h4>
+                  <h4 className="text-white font-museo font-bold text-lg">Buyble Inc.</h4>
                   <span className="text-gray-400 text-sm">3 days ago • Company Update</span>
                 </div>
               </div>
@@ -119,7 +119,7 @@ const LinkedInPage: React.FC = () => {
                   <Briefcase className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-white font-museo font-bold text-lg">E-Commerce Tech Inc.</h4>
+                  <h4 className="text-white font-museo font-bold text-lg">Buyble Inc.</h4>
                   <span className="text-gray-400 text-sm">1 week ago • Career Opportunity</span>
                 </div>
               </div>
@@ -152,7 +152,7 @@ const LinkedInPage: React.FC = () => {
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-white font-museo font-bold text-lg">E-Commerce Tech Inc.</h4>
+                  <h4 className="text-white font-museo font-bold text-lg">Buyble Inc.</h4>
                   <span className="text-gray-400 text-sm">2 weeks ago • Industry Insight</span>
                 </div>
               </div>

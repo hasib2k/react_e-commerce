@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "React E-commerce Platform",
-  description: "Modern e-commerce frontend built with React and Next.js",
+  title: "Buyble - Modern E-commerce Platform",
+  description: "Buyble: Your premier destination for electronics, accessories, and gadgets. Modern e-commerce platform built with React and Next.js",
 };
 
 export default function RootLayout({

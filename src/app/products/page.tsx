@@ -213,8 +213,8 @@ const Products: React.FC = () => {
             {categories.map((category) => (
               <GlassCard 
                 key={category.id} 
-                className={`text-center cursor-pointer hover-lift transition-all duration-300 p-4 sm:p-6 ${
-                  categoryFilter === category.id ? 'border-2 border-primary bg-primary/10' : ''
+                className={`text-center cursor-pointer hover-lift transition-all duration-300 p-4 sm:p-6 backdrop-blur-2xl bg-black/40 border border-black/50 hover:bg-black/50 hover:border-primary/30 transform hover:scale-105 shadow-xl ${
+                  categoryFilter === category.id ? 'border-2 border-primary bg-primary/20 backdrop-blur-3xl' : ''
                 }`}
                 onClick={() => setCategoryFilter(category.id)}
               >

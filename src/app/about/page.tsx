@@ -119,12 +119,12 @@ const About: React.FC = () => {
               <div>
                 <h2 className="text-4xl font-bold font-museo text-white mb-6">Our Story</h2>
                 <p className="text-gray-300 font-museo mb-6 text-lg leading-relaxed">
-                  Founded in 2020, our e-commerce platform started with a simple vision: to create 
+                  Founded in 2020, Buyble started with a simple vision: to create 
                   a seamless shopping experience that combines cutting-edge technology with exceptional 
                   customer service.
                 </p>
                 <p className="text-gray-300 font-museo mb-6 text-lg leading-relaxed">
-                  Today, we&apos;ve grown to serve thousands of customers worldwide, offering carefully 
+                  Today, Buyble has grown to serve thousands of customers worldwide, offering carefully 
                   curated products from electronics to accessories. Our commitment to quality and 
                   innovation drives everything we do.
                 </p>
