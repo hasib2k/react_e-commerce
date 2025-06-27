@@ -244,3 +244,65 @@ body::before {
     background-position: 0% 50%;
   }
 }
+
+/* Enhanced range slider styling for theme color */
+.slider-thumb {
+  background: linear-gradient(to right, #00D1B2 0%, #00D1B2 var(--value, 50%), rgba(255, 255, 255, 0.2) var(--value, 50%), rgba(255, 255, 255, 0.2) 100%);
+}
+
+.slider-thumb::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00D1B2;
+  border: 2px solid white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 209, 178, 0.3);
+  transition: all 0.3s ease;
+}
+
+.slider-thumb::-webkit-slider-thumb:hover {
+  background: #00c4b8;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 209, 178, 0.5);
+}
+
+.slider-thumb::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00D1B2;
+  border: 2px solid white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 209, 178, 0.3);
+  transition: all 0.3s ease;
+}
+
+.slider-thumb::-moz-range-thumb:hover {
+  background: #00c4b8;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 209, 178, 0.5);
+}
+
+/* Custom select dropdown arrow */
+select::-ms-expand {
+  display: none;
+}
+
+/* Text truncation utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

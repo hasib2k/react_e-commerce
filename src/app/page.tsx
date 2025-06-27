@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Shield, Truck, HeadphonesIcon, CreditCard, Star, Users, Award, CheckCircle, Mail, ArrowRight, Quote, Zap, Smartphone, Laptop, Headphones, Mouse, Gamepad2, Camera, TrendingUp, Clock, Globe } from 'lucide-react';
+import Link from 'next/link';
+import { Shield, Truck, HeadphonesIcon, CreditCard, Star, Users, Award, CheckCircle, ArrowRight, Quote } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProductCard from '@/components/ProductCard';
@@ -12,7 +13,7 @@ import PromoBanner from '@/components/PromoBanner';
 import CategoriesShowcase from '@/components/CategoriesShowcase';
 import BrandPartners from '@/components/BrandPartners';
 import BlogSection from '@/components/BlogSection';
-import { CartProvider, useCart, Product } from '@/context/CartContext';
+import { useCart, Product } from '@/context/CartContext';
 
 // Expanded products data
 const sampleProducts: (Product & { category: string })[] = [
@@ -20,7 +21,7 @@ const sampleProducts: (Product & { category: string })[] = [
     id: 1,
     name: "Premium Wireless Headphones",
     price: 299.99,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop&q=80",
     description: "High-quality wireless headphones with noise cancellation",
     category: "electronics"
   },
@@ -28,7 +29,7 @@ const sampleProducts: (Product & { category: string })[] = [
     id: 2,
     name: "Smart Watch Pro",
     price: 399.99,
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop&q=80",
     description: "Advanced smartwatch with health monitoring",
     category: "electronics"
   },
@@ -36,15 +37,15 @@ const sampleProducts: (Product & { category: string })[] = [
     id: 3,
     name: "Laptop Stand",
     price: 79.99,
-    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop&q=80",
     description: "Ergonomic laptop stand for better productivity",
     category: "accessories"
   },
   {
     id: 4,
-    name: "Wireless Mouse",
+    name: "Wireless Gaming Mouse",
     price: 49.99,
-    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=300&h=300&fit=crop&q=80",
     description: "Precision wireless mouse for work and gaming",
     category: "accessories"
   },
@@ -52,7 +53,7 @@ const sampleProducts: (Product & { category: string })[] = [
     id: 5,
     name: "USB-C Hub",
     price: 89.99,
-    image: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&h=300&fit=crop&q=80",
     description: "Multi-port USB-C hub with 4K HDMI support",
     category: "gadgets"
   },
@@ -60,7 +61,7 @@ const sampleProducts: (Product & { category: string })[] = [
     id: 6,
     name: "Bluetooth Speaker",
     price: 129.99,
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop&q=80",
     description: "Portable Bluetooth speaker with rich sound",
     category: "electronics"
   },
@@ -68,7 +69,7 @@ const sampleProducts: (Product & { category: string })[] = [
     id: 7,
     name: "Phone Case",
     price: 24.99,
-    image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1556618304-d1ab6ead8dea?w=300&h=300&fit=crop&q=80",
     description: "Protective phone case with wireless charging support",
     category: "accessories"
   },
@@ -76,9 +77,41 @@ const sampleProducts: (Product & { category: string })[] = [
     id: 8,
     name: "Wireless Charger",
     price: 39.99,
-    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1609592328270-6077b8b2b0d6?w=300&h=300&fit=crop&q=80",
     description: "Fast wireless charging pad for smartphones",
     category: "gadgets"
+  },
+  {
+    id: 9,
+    name: "Mechanical Keyboard",
+    price: 159.99,
+    image: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=300&h=300&fit=crop&q=80",
+    description: "RGB mechanical keyboard with tactile switches",
+    category: "accessories"
+  },
+  {
+    id: 10,
+    name: "4K Webcam",
+    price: 199.99,
+    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=300&h=300&fit=crop&q=80",
+    description: "Ultra HD webcam for streaming and video calls",
+    category: "electronics"
+  },
+  {
+    id: 11,
+    name: "Portable SSD",
+    price: 119.99,
+    image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300&h=300&fit=crop&q=80",
+    description: "High-speed portable SSD with USB-C connectivity",
+    category: "gadgets"
+  },
+  {
+    id: 12,
+    name: "Desk Organizer",
+    price: 34.99,
+    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=300&fit=crop&q=80",
+    description: "Bamboo desk organizer with wireless charging",
+    category: "accessories"
   }
 ];
 
@@ -120,11 +153,11 @@ const MainContent: React.FC = () => {
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold font-museo text-white mb-4">
               Featured <span className="text-primary">Products</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-museo">
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto font-museo">
               Discover our handpicked selection of premium products, chosen for their innovation, quality, and customer satisfaction.
             </p>
           </div>
@@ -135,7 +168,7 @@ const MainContent: React.FC = () => {
             onPriceFilter={(min, max) => setPriceRange({ min, max })}
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-8">
             {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
@@ -154,6 +187,36 @@ const MainContent: React.FC = () => {
               <p className="text-gray-400 font-museo">Try adjusting your filters or search terms.</p>
             </div>
           )}
+          
+          {/* View All Products Button */}
+          <div className="text-center mt-8">
+            <Link
+              href="/products"
+              className="group relative inline-flex items-center px-6 py-3 overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105"
+            >
+              {/* Liquid Glass Background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-xl border border-white/20 rounded-2xl"></div>
+              
+              {/* Animated Liquid Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/20 via-primary/10 to-transparent rounded-2xl animate-pulse"></div>
+                <div className="absolute top-2 left-2 w-4 h-4 bg-white/30 rounded-full blur-sm animate-bounce"></div>
+                <div className="absolute bottom-3 right-4 w-3 h-3 bg-primary/40 rounded-full blur-sm animate-bounce delay-200"></div>
+                <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-white/20 rounded-full blur-sm animate-pulse delay-300"></div>
+              </div>
+              
+              {/* Content */}
+              <div className="relative z-10 flex items-center">
+                <span className="text-white font-bold text-sm font-museo group-hover:text-primary transition-colors duration-300">
+                  View All Products
+                </span>
+                <ArrowRight className="w-4 h-4 ml-2 text-white group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+              </div>
+              
+              {/* Border Glow Effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -170,55 +233,63 @@ const MainContent: React.FC = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
-              Why <span className="text-primary">Choose Buyble</span>
+              Why <span className="inline-block">
+                <span className="text-primary">Choose </span>
+                <span className="text-blue-400">B</span>
+                <span className="text-purple-400">u</span>
+                <span className="text-pink-400">y</span>
+                <span className="text-primary">b</span>
+                <span className="text-yellow-400">l</span>
+                <span className="text-green-400">e</span>
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto font-museo">
               Experience the future of online shopping with our premium features designed for your convenience and satisfaction.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <GlassCard className="text-center hover-lift group relative overflow-hidden p-4">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Shield className="w-10 h-10 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Bank-Level Security</h3>
-                <p className="text-gray-300 leading-relaxed">Advanced encryption and multi-layer security protocols protect every transaction with military-grade protection.</p>
+                <h3 className="text-lg font-bold text-white font-museo mb-3">Bank-Level Security</h3>
+                <p className="text-gray-300 leading-relaxed text-sm">Advanced encryption and multi-layer security protocols protect every transaction.</p>
               </div>
             </GlassCard>
             
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
+            <GlassCard className="text-center hover-lift group relative overflow-hidden p-4">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Truck className="w-10 h-10 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Truck className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Lightning Fast Delivery</h3>
-                <p className="text-gray-300 leading-relaxed">Same-day delivery in major cities, with real-time tracking and premium packaging for all orders over $50.</p>
+                <h3 className="text-lg font-bold text-white font-museo mb-3">Lightning Fast Delivery</h3>
+                <p className="text-gray-300 leading-relaxed text-sm">Same-day delivery in major cities, with real-time tracking and premium packaging.</p>
               </div>
             </GlassCard>
             
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
+            <GlassCard className="text-center hover-lift group relative overflow-hidden p-4">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <HeadphonesIcon className="w-10 h-10 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <HeadphonesIcon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">AI-Powered Support</h3>
-                <p className="text-gray-300 leading-relaxed">24/7 intelligent customer support with instant responses, live chat, and expert product consultations.</p>
+                <h3 className="text-lg font-bold text-white font-museo mb-3">AI-Powered Support</h3>
+                <p className="text-gray-300 leading-relaxed text-sm">24/7 intelligent customer support with instant responses and live chat.</p>
               </div>
             </GlassCard>
             
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
+            <GlassCard className="text-center hover-lift group relative overflow-hidden p-4">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <CreditCard className="w-10 h-10 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <CreditCard className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Zero-Risk Returns</h3>
-                <p className="text-gray-300 leading-relaxed">60-day money-back guarantee with free return shipping and instant refunds to your original payment method.</p>
+                <h3 className="text-lg font-bold text-white font-museo mb-3">Zero-Risk Returns</h3>
+                <p className="text-gray-300 leading-relaxed text-sm">60-day money-back guarantee with free return shipping and instant refunds.</p>
               </div>
             </GlassCard>
           </div>
@@ -243,47 +314,47 @@ const MainContent: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <GlassCard className="text-center hover-lift group relative overflow-hidden p-5">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Users className="w-12 h-12 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-6xl font-bold text-white font-museo mb-4 group-hover:text-primary transition-colors duration-300">2.5M+</h3>
-                <p className="text-gray-300 text-xl font-museo">Happy Customers Worldwide</p>
-                <div className="mt-4 text-sm text-gray-400">
-                  Growing by 10,000+ monthly
+                <h3 className="text-4xl font-bold text-white font-museo mb-3 group-hover:text-primary transition-colors duration-300">2.5M+</h3>
+                <p className="text-gray-300 text-lg font-museo">Happy Customers</p>
+                <div className="mt-2 text-sm text-gray-400">
+                  Growing by 10k+ monthly
                 </div>
               </div>
             </GlassCard>
             
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
+            <GlassCard className="text-center hover-lift group relative overflow-hidden p-5">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Star className="w-12 h-12 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Star className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-6xl font-bold text-white font-museo mb-4 group-hover:text-primary transition-colors duration-300">4.9/5</h3>
-                <p className="text-gray-300 text-xl font-museo">Average Customer Rating</p>
-                <div className="mt-4 flex justify-center">
+                <h3 className="text-4xl font-bold text-white font-museo mb-3 group-hover:text-primary transition-colors duration-300">4.9/5</h3>
+                <p className="text-gray-300 text-lg font-museo">Customer Rating</p>
+                <div className="mt-2 flex justify-center">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
               </div>
             </GlassCard>
             
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
+            <GlassCard className="text-center hover-lift group relative overflow-hidden p-5">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Award className="w-12 h-12 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Award className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-6xl font-bold text-white font-museo mb-4 group-hover:text-primary transition-colors duration-300">25+</h3>
-                <p className="text-gray-300 text-xl font-museo">Industry Awards & Recognition</p>
-                <div className="mt-4 text-sm text-gray-400">
-                  Including "Best E-commerce Platform 2024"
+                <h3 className="text-4xl font-bold text-white font-museo mb-3 group-hover:text-primary transition-colors duration-300">25+</h3>
+                <p className="text-gray-300 text-lg font-museo">Industry Awards</p>
+                <div className="mt-2 text-sm text-gray-400">
+                  "Best E-commerce 2024"
                 </div>
               </div>
             </GlassCard>
@@ -439,7 +510,14 @@ const MainContent: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-5xl md:text-6xl font-bold font-museo text-white mb-8">
-                Experience the <span className="text-primary">Buyble Advantage</span>
+                Experience the <span className="inline-block">
+                  <span className="text-blue-400">B</span>
+                  <span className="text-purple-400">u</span>
+                  <span className="text-pink-400">y</span>
+                  <span className="text-primary">b</span>
+                  <span className="text-yellow-400">l</span>
+                  <span className="text-green-400">e</span>
+                </span> <span className="text-primary">Advantage</span>
               </h2>
               <p className="text-xl text-gray-300 mb-12 font-museo leading-relaxed">
                 Discover why millions of customers worldwide trust Buyble for their premium shopping needs. We're not just an e-commerce platform – we're your technology partner.
@@ -532,283 +610,6 @@ const MainContent: React.FC = () => {
         </div>
       </section>
 
-      {/* Success Stories Section */}
-      <section className="py-20 px-4 bg-black/20 relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary/5 to-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-l from-accent/5 to-transparent"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
-              Success <span className="text-primary">Stories</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-museo">
-              Real results from real customers who've transformed their digital experience with Buyble.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <GlassCard className="hover-lift group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <TrendingUp className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-green-400 font-museo mb-2">300%</h3>
-                <h4 className="text-xl font-bold text-white font-museo mb-4">Productivity Boost</h4>
-                <p className="text-gray-300 mb-4">
-                  "The laptop and accessories I bought from Buyble increased my work efficiency dramatically. Best investment ever!"
-                </p>
-                <div className="text-sm text-gray-400">
-                  <strong>Alex Thompson</strong> • Content Creator
-                </div>
-              </div>
-            </GlassCard>
-            
-            <GlassCard className="hover-lift group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Clock className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-blue-400 font-museo mb-2">24hrs</h3>
-                <h4 className="text-xl font-bold text-white font-museo mb-4">Lightning Delivery</h4>
-                <p className="text-gray-300 mb-4">
-                  "Ordered a gaming setup at midnight, received it the next evening. The packaging was premium quality!"
-                </p>
-                <div className="text-sm text-gray-400">
-                  <strong>Jordan Kim</strong> • Gamer & Streamer
-                </div>
-              </div>
-            </GlassCard>
-            
-            <GlassCard className="hover-lift group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10 text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Globe className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-purple-400 font-museo mb-2">50+</h3>
-                <h4 className="text-xl font-bold text-white font-museo mb-4">Countries Served</h4>
-                <p className="text-gray-300 mb-4">
-                  "International shipping was seamless. My smart home devices arrived perfectly packaged from across the globe."
-                </p>
-                <div className="text-sm text-gray-400">
-                  <strong>Maria Santos</strong> • Smart Home Enthusiast
-                </div>
-              </div>
-            </GlassCard>
-          </div>
-          
-          {/* Call to Action */}
-          <div className="text-center">
-            <GlassCard className="inline-block hover-lift">
-              <div className="px-8 py-6">
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Ready to Join Our Success Stories?</h3>
-                <p className="text-gray-300 mb-6 font-museo">Start your journey with Buyble today and experience the difference.</p>
-                <button className="px-8 py-4 bg-gradient-to-r from-primary to-primary/80 text-white font-bold rounded-xl hover:from-primary/90 hover:to-primary transition-all duration-300 flex items-center justify-center mx-auto text-lg font-museo">
-                  Start Shopping
-                  <ArrowRight className="w-6 h-6 ml-2" />
-                </button>
-              </div>
-            </GlassCard>
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced Newsletter Section */}
-      <section className="py-20 px-4 bg-black/20 relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-tl from-accent/5 to-transparent"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary opacity-5 rounded-full blur-3xl animate-pulse"></div>
-        </div>
-        
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <GlassCard className="hover-lift group relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative z-10 px-8 py-12">
-              <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
-                <Mail className="w-12 h-12 text-white" />
-              </div>
-              
-              <h2 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
-                Stay <span className="text-primary">Connected</span>
-              </h2>
-              
-              <p className="text-xl text-gray-300 mb-8 font-museo leading-relaxed max-w-3xl mx-auto">
-                Join our exclusive community and be the first to discover cutting-edge products, limited-time offers, and insider deals. Plus, get <span className="text-primary font-bold">20% off</span> your first order!
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-8">
-                <div className="flex-1 relative">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 backdrop-blur-xl transition-all duration-300 text-lg font-museo"
-                  />
-                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                    <Mail className="w-5 h-5 text-gray-400" />
-                  </div>
-                </div>
-                <button className="px-10 py-4 bg-gradient-to-r from-primary to-primary/80 text-white font-bold rounded-xl hover:from-primary/90 hover:to-primary transition-all duration-300 flex items-center justify-center text-lg font-museo group-button shadow-2xl hover:shadow-primary/25">
-                  Get 20% Off
-                  <ArrowRight className="w-6 h-6 ml-2 group-button-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-400 max-w-3xl mx-auto">
-                <div className="flex items-center justify-center">
-                  <Shield className="w-4 h-4 text-primary mr-2" />
-                  <span>Privacy Protected</span>
-                </div>
-                <div className="flex items-center justify-center">
-                  <Star className="w-4 h-4 text-primary mr-2" />
-                  <span>Exclusive Member Deals</span>
-                </div>
-                <div className="flex items-center justify-center">
-                  <Users className="w-4 h-4 text-primary mr-2" />
-                  <span>Join 2.5M+ Subscribers</span>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <p className="text-sm text-gray-400 font-museo">
-                  ✨ <span className="text-primary">Instant welcome bonus</span> • 📧 Weekly tech insights • 🎁 Member-only flash sales • 🔄 Unsubscribe anytime
-                </p>
-              </div>
-            </div>
-          </GlassCard>
-        </div>
-      </section>
-
-      {/* Technology Showcase Section */}
-      <section className="py-20 px-4 relative overflow-hidden">
-        {/* Background Animation */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary opacity-10 rounded-full blur-2xl animate-bounce"></div>
-          <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-accent opacity-10 rounded-full blur-3xl animate-pulse delay-500"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary opacity-5 rounded-full blur-3xl animate-ping"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
-              Cutting-Edge <span className="text-primary">Technology</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-museo">
-              Discover the latest innovations and trending tech products, carefully curated by our experts for the modern digital lifestyle.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {/* Featured Tech Categories */}
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Smartphone className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Smart Devices</h3>
-                <p className="text-gray-300 mb-6">Latest smartphones, tablets, and wearables with cutting-edge features.</p>
-                <div className="text-primary font-bold font-museo">500+ Products</div>
-              </div>
-            </GlassCard>
-            
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Laptop className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Computing</h3>
-                <p className="text-gray-300 mb-6">High-performance laptops, desktops, and workstations for professionals.</p>
-                <div className="text-primary font-bold font-museo">300+ Products</div>
-              </div>
-            </GlassCard>
-            
-            <GlassCard className="text-center hover-lift group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Headphones className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Audio & Visual</h3>
-                <p className="text-gray-300 mb-6">Premium headphones, speakers, and entertainment systems.</p>
-                <div className="text-primary font-bold font-museo">250+ Products</div>
-              </div>
-            </GlassCard>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-4xl font-bold font-museo text-white mb-6">
-                Innovation at Your <span className="text-primary">Fingertips</span>
-              </h3>
-              <p className="text-lg text-gray-300 mb-8 font-museo leading-relaxed">
-                Stay ahead of the curve with our carefully selected collection of revolutionary products. From AI-powered gadgets to sustainable tech solutions, we bring you tomorrow's technology today.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-white font-bold font-museo mb-2">AI-Powered</h4>
-                  <p className="text-gray-400 text-sm">Smart technology that learns and adapts</p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-8 h-8 text-white" />
-                  </div>
-                  <h4 className="text-white font-bold font-museo mb-2">Secure</h4>
-                  <p className="text-gray-400 text-sm">Enterprise-grade security features</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <GlassCard className="hover-lift group">
-                <div className="text-center p-4">
-                  <Mouse className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h4 className="text-white font-museo font-bold">Gaming Gear</h4>
-                  <p className="text-gray-400 text-sm mt-2">Pro-level accessories</p>
-                </div>
-              </GlassCard>
-              
-              <GlassCard className="hover-lift group">
-                <div className="text-center p-4">
-                  <Camera className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h4 className="text-white font-museo font-bold">Photography</h4>
-                  <p className="text-gray-400 text-sm mt-2">Creator tools</p>
-                </div>
-              </GlassCard>
-              
-              <GlassCard className="hover-lift group">
-                <div className="text-center p-4">
-                  <Gamepad2 className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h4 className="text-white font-museo font-bold">Gaming</h4>
-                  <p className="text-gray-400 text-sm mt-2">Console & PC</p>
-                </div>
-              </GlassCard>
-              
-              <GlassCard className="hover-lift group">
-                <div className="text-center p-4">
-                  <Smartphone className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h4 className="text-white font-museo font-bold">Mobility</h4>
-                  <p className="text-gray-400 text-sm mt-2">On-the-go tech</p>
-                </div>
-              </GlassCard>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <BlogSection />
 
       <BrandPartners />
@@ -819,9 +620,5 @@ const MainContent: React.FC = () => {
 };
 
 export default function Home() {
-  return (
-    <CartProvider>
-      <MainContent />
-    </CartProvider>
-  );
+  return <MainContent />;
 }

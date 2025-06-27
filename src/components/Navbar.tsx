@@ -36,9 +36,10 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount = 0 }) => {
       label: 'Products', 
       icon: Package,
       dropdown: [
-        { href: '/electronics', label: 'Electronics', icon: Smartphone },
-        { href: '/accessories', label: 'Accessories', icon: Headphones },
-        { href: '/gadgets', label: 'Gadgets', icon: Watch }
+        { href: '/products', label: 'All Products', icon: Package },
+        { href: '/products/electronics', label: 'Electronics', icon: Smartphone },
+        { href: '/products/accessories', label: 'Accessories', icon: Headphones },
+        { href: '/products/gadgets', label: 'Gadgets', icon: Watch }
       ]
     },
     { href: '/brands', label: 'Brands', icon: Users },
@@ -53,7 +54,12 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount = 0 }) => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-4">
             <h1 className="text-xl sm:text-2xl font-bold font-museo text-white">
-              <span className="text-primary">B</span>uyble
+              <span className="text-blue-400">B</span>
+              <span className="text-purple-400">U</span>
+              <span className="text-pink-400">Y</span>
+              <span className="text-primary">B</span>
+              <span className="text-yellow-400">L</span>
+              <span className="text-green-400">E</span>
             </h1>
           </Link>
 

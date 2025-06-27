@@ -48,8 +48,13 @@ const Hero: React.FC = () => {
           {/* Main Heading */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-museo text-white mb-8 leading-tight">
             <span className="block">Welcome to</span>
-            <span className="block text-primary animate-pulse">
-              Buyble
+            <span className="block animate-pulse">
+              <span className="text-blue-400">B</span>
+              <span className="text-purple-400">U</span>
+              <span className="text-pink-400">Y</span>
+              <span className="text-primary">B</span>
+              <span className="text-yellow-400">L</span>
+              <span className="text-green-400">E</span>
             </span>
           </h1>
           
@@ -132,7 +137,14 @@ const Hero: React.FC = () => {
           <div className="relative z-10">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white font-museo mb-4">
-                Why Choose <span className="text-primary">Buyble</span>?
+                Why Choose <span className="inline-block">
+                  <span className="text-blue-400">B</span>
+                  <span className="text-purple-400">u</span>
+                  <span className="text-pink-400">y</span>
+                  <span className="text-primary">b</span>
+                  <span className="text-yellow-400">l</span>
+                  <span className="text-green-400">e</span>
+                </span>?
               </h2>
               <p className="text-gray-300 font-museo text-lg">
                 Experience premium shopping with cutting-edge features designed for you.
