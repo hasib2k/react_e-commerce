@@ -1,24 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React E-commerce Platform
 
-## Getting Started
+A modern, responsive e-commerce frontend built with React and Next.js, featuring:
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **🎨 Modern Design**: Glassmorphism (liquid glass) effect with MuseoModerno font
+- **📱 Responsive**: Works seamlessly across all device sizes
+- **🛒 Shopping Cart**: Full cart functionality with add/remove/update quantity
+- **🔍 Product Search & Filters**: Search by name, filter by category and price range
+- **⚡ Fast Performance**: Built with Next.js 15 and optimized for speed
+- **🎯 State Management**: React Context API for efficient state handling
+- **💻 Type Safety**: Built with TypeScript for better development experience
+- **🎭 Smooth Animations**: Beautiful hover effects and transitions
+- **📦 8 Sample Products**: Electronics, accessories, and gadgets
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: React 19, Next.js 15.3.4
+- **Styling**: Tailwind CSS v4, Custom CSS with glassmorphism
+- **Language**: TypeScript
+- **Font**: MuseoModerno from Google Fonts
+- **Images**: Next.js Image component with Unsplash integration
+- **State**: React Context API with useReducer
+- **Build**: Next.js build system with ESLint
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Getting Started
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser** and navigate to [http://localhost:3000](http://localhost:3000)
+
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+## 🎨 Design Features
+
+- **Color Theme**: 
+  - Primary: #00e0d3 (Cyan)
+  - Secondary: #1a1a2e (Dark Blue)
+  - Accent: #ff6f61 (Coral)
+  - Background: #232946 (Dark Purple)
+
+- **Glassmorphism Effect**:
+  - Semi-transparent backgrounds
+  - Backdrop blur with saturation
+  - Subtle borders and shadows
+  - Smooth hover animations
+
+- **Typography**: MuseoModerno font for modern, tech-savvy look
+
+## 🛒 E-commerce Features
+
+- **Product Catalog**: 8 sample products with images from Unsplash
+- **Shopping Cart**: Add, remove, update quantities
+- **Search & Filter**: Search by name, filter by category and price
+- **Responsive Grid**: Adapts from 1 to 4 columns based on screen size
+- **Product Categories**: Electronics, Accessories, Gadgets
+- **Price Range Filter**: Slider-based price filtering
+
+## 🔧 Customization
+
+- **Add Products**: Edit the `sampleProducts` array in `src/app/page.tsx`
+- **Change Colors**: Update CSS variables in `src/app/globals.css`
+- **Modify Theme**: Edit Tailwind config in `tailwind.config.js`
+- **Add Pages**: Create new files in `src/app/` directory
+
+## 📦 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+---
+
+**Built with ❤️ using React, Next.js, and modern web technologies**
 
 ## Learn More
 
