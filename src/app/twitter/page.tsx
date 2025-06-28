@@ -1,6 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import GlassCard from '@/components/GlassCard';
-import { Twitter, MessageCircle, Repeat2, Heart, TrendingUp, Zap, Users, Hash } from 'lucide-react';
+import { Twitter, MessageCircle, Repeat2, Heart, TrendingUp, Zap, Users } from 'lucide-react';
 
 const TwitterPage: React.FC = () => {
   return (
@@ -158,8 +159,8 @@ const TwitterPage: React.FC = () => {
                 </div>
               </div>
               <p className="text-white font-museo mb-4">
-                🎉 Milestone Alert! We've just reached 18K followers! Thank you for being part of our tech community. 
-                As a celebration, we're giving away a premium wireless mouse to one lucky follower! RT to enter! 
+                🎉 Milestone Alert! We&apos;ve just reached 18K followers! Thank you for being part of our tech community. 
+                As a celebration, we&apos;re giving away a premium wireless mouse to one lucky follower! RT to enter! 
                 <span className="text-sky-400">#Giveaway #TechCommunity #Milestone</span>
               </p>
               <div className="flex items-center space-x-6 text-gray-400 text-sm">
@@ -215,12 +216,12 @@ const TwitterPage: React.FC = () => {
                 <Twitter className="w-5 h-5" />
                 <span>Follow @ECommerceTech</span>
               </a>
-              <a 
+              <Link 
                 href="/" 
                 className="border-2 border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-white px-8 py-3 rounded-lg font-museo transition-all duration-300"
               >
                 Back to Store
-              </a>
+              </Link>
             </div>
           </div>
         </GlassCard>

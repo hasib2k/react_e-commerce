@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Search, Zap, Wifi, Bluetooth, Battery, Star } from 'lucide-react';
+import { Search, Zap, Wifi, Bluetooth, Battery } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
 import Breadcrumb from '@/components/Breadcrumb';
 import ProductCard from '@/components/ProductCard';
 import { useCart, Product } from '@/context/CartContext';
 
 const AllGadgets: React.FC = () => {
-  const { state, dispatch } = useCart();
+  const { dispatch } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
   const [subCategoryFilter, setSubCategoryFilter] = useState('all');
   const [priceRange, setPriceRange] = useState({ min: 0, max: 500 });

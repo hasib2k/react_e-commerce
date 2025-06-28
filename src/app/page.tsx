@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Shield, Truck, HeadphonesIcon, CreditCard, Star, Users, Award, CheckCircle, ArrowRight, Quote } from 'lucide-react';
 import Navbar from '@/components/Navbar';
@@ -354,7 +355,7 @@ const MainContent: React.FC = () => {
                 <h3 className="text-4xl font-bold text-white font-museo mb-3 group-hover:text-primary transition-colors duration-300">25+</h3>
                 <p className="text-gray-300 text-lg font-museo">Industry Awards</p>
                 <div className="mt-2 text-sm text-gray-400">
-                  "Best E-commerce 2024"
+                  &quot;Best E-commerce 2024&quot;
                 </div>
               </div>
             </GlassCard>
@@ -393,13 +394,15 @@ const MainContent: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-gray-300 mb-8 italic text-lg leading-relaxed">
-                  "The shopping experience at Buyble is absolutely phenomenal! The glassmorphism design is stunning, products arrive faster than promised, and the quality exceeds expectations every single time."
+                  &quot;The shopping experience at Buyble is absolutely phenomenal! The glassmorphism design is stunning, products arrive faster than promised, and the quality exceeds expectations every single time.&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="relative">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=60&h=60&fit=crop&crop=face" 
                       alt="Sarah Johnson" 
+                      width={64}
+                      height={64}
                       className="w-16 h-16 rounded-full mr-4 border-2 border-primary/50"
                     />
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-background"></div>
@@ -425,13 +428,15 @@ const MainContent: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-gray-300 mb-8 italic text-lg leading-relaxed">
-                  "As a tech enthusiast, I'm impressed by Buyble's curated selection and competitive pricing. Their AI-powered recommendations helped me find exactly what I needed. Outstanding service!"
+                  &quot;As a tech enthusiast, I&apos;m impressed by Buyble&apos;s curated selection and competitive pricing. Their AI-powered recommendations helped me find exactly what I needed. Outstanding service!&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="relative">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" 
                       alt="Michael Chen" 
+                      width={64}
+                      height={64}
                       className="w-16 h-16 rounded-full mr-4 border-2 border-primary/50"
                     />
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-background"></div>
@@ -457,13 +462,15 @@ const MainContent: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-gray-300 mb-8 italic text-lg leading-relaxed">
-                  "Buyble has revolutionized my online shopping experience. The zero-risk returns and lightning-fast delivery make it my go-to platform. Exceptional quality and customer service!"
+                  &quot;Buyble has revolutionized my online shopping experience. The zero-risk returns and lightning-fast delivery make it my go-to platform. Exceptional quality and customer service!&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="relative">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" 
                       alt="Emily Davis" 
+                      width={64}
+                      height={64}
                       className="w-16 h-16 rounded-full mr-4 border-2 border-primary/50"
                     />
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-background"></div>
@@ -520,7 +527,7 @@ const MainContent: React.FC = () => {
                 </span> <span className="text-primary">Advantage</span>
               </h2>
               <p className="text-xl text-gray-300 mb-12 font-museo leading-relaxed">
-                Discover why millions of customers worldwide trust Buyble for their premium shopping needs. We're not just an e-commerce platform – we're your technology partner.
+                Discover why millions of customers worldwide trust Buyble for their premium shopping needs. We&apos;re not just an e-commerce platform – we&apos;re your technology partner.
               </p>
               
               <div className="space-y-8">
@@ -540,7 +547,7 @@ const MainContent: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white font-museo mb-3 group-hover:text-primary transition-colors duration-300">AI-Powered Price Matching</h3>
-                    <p className="text-gray-300 leading-relaxed">Our intelligent algorithms monitor global markets 24/7 to ensure you always get the best prices. Find it cheaper elsewhere? We'll match it instantly.</p>
+                    <p className="text-gray-300 leading-relaxed">Our intelligent algorithms monitor global markets 24/7 to ensure you always get the best prices. Find it cheaper elsewhere? We&apos;ll match it instantly.</p>
                   </div>
                 </div>
                 
@@ -569,9 +576,11 @@ const MainContent: React.FC = () => {
             <div className="relative">
               <GlassCard className="hover-lift overflow-hidden">
                 <div className="relative">
-                  <img 
+                  <Image 
                     src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=500&fit=crop" 
                     alt="Premium Shopping Experience" 
+                    width={600}
+                    height={500}
                     className="w-full h-96 object-cover rounded-lg"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>

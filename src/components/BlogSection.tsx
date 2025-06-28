@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
 import GlassCard from './GlassCard';
 
@@ -54,9 +55,11 @@ const BlogSection: React.FC = () => {
           {blogPosts.map((post) => (
             <GlassCard key={post.id} className="hover-lift cursor-pointer group overflow-hidden">
               <div className="relative overflow-hidden rounded-lg mb-4">
-                <img 
+                <Image 
                   src={post.image} 
                   alt={post.title}
+                  width={400}
+                  height={192}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

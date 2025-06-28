@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import GlassCard from './GlassCard';
 
 const BrandPartners: React.FC = () => {
@@ -51,9 +52,11 @@ const BrandPartners: React.FC = () => {
           {brands.map((brand, index) => (
             <GlassCard key={index} className="text-center hover-lift cursor-pointer group">
               <div className="relative overflow-hidden rounded-lg mb-3">
-                <img 
+                <Image 
                   src={brand.logo} 
                   alt={brand.name}
+                  width={120}
+                  height={64}
                   className="w-full h-16 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>

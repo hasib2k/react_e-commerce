@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ShoppingBag, Star, Shield, Zap, Users, Award, TrendingUp, CheckCircle } from 'lucide-react';
+import { ArrowRight, ShoppingBag, Star, Users, Award, TrendingUp } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
 
 const Hero: React.FC = () => {
@@ -130,66 +130,6 @@ const Hero: React.FC = () => {
           </div>
           
         </div>
-
-        {/* Enhanced Features Section */}
-        <GlassCard className="mt-16 hover-lift relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-          <div className="relative z-10">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-white font-museo mb-4">
-                Why Choose <span className="inline-block">
-                  <span className="text-blue-400">B</span>
-                  <span className="text-purple-400">u</span>
-                  <span className="text-pink-400">y</span>
-                  <span className="text-primary">b</span>
-                  <span className="text-yellow-400">l</span>
-                  <span className="text-green-400">e</span>
-                </span>?
-              </h2>
-              <p className="text-gray-300 font-museo text-lg">
-                Experience premium shopping with cutting-edge features designed for you.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <ShoppingBag className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Premium Products</h3>
-                <p className="text-gray-300 font-museo leading-relaxed">Carefully curated selection of high-quality items from trusted brands worldwide.</p>
-                <div className="flex justify-center mt-4">
-                  <CheckCircle className="w-5 h-5 text-primary mr-2" />
-                  <span className="text-primary font-museo text-sm font-bold">Quality Guaranteed</span>
-                </div>
-              </div>
-              
-              <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Lightning Fast</h3>
-                <p className="text-gray-300 font-museo leading-relaxed">Same-day delivery in major cities with real-time tracking and premium packaging.</p>
-                <div className="flex justify-center mt-4">
-                  <CheckCircle className="w-5 h-5 text-primary mr-2" />
-                  <span className="text-primary font-museo text-sm font-bold">Free Shipping $50+</span>
-                </div>
-              </div>
-              
-              <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Shield className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white font-museo mb-4">Secure & Safe</h3>
-                <p className="text-gray-300 font-museo leading-relaxed">Bank-level encryption and 60-day money-back guarantee for complete peace of mind.</p>
-                <div className="flex justify-center mt-4">
-                  <CheckCircle className="w-5 h-5 text-primary mr-2" />
-                  <span className="text-primary font-museo text-sm font-bold">100% Protected</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </GlassCard>
       </div>
     </section>
   );

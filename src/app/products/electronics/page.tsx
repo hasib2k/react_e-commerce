@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Grid, List, Star, Heart, ShoppingCart, Smartphone, Laptop, Headphones, Camera, Watch, Speaker } from 'lucide-react';
+import { Search, Smartphone, Laptop, Headphones, Camera, Watch } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
 import Breadcrumb from '@/components/Breadcrumb';
 import ProductCard from '@/components/ProductCard';
 import { useCart, Product } from '@/context/CartContext';
 
 const AllElectronics: React.FC = () => {
-  const { state, dispatch } = useCart();
+  const { dispatch } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
   const [subCategoryFilter, setSubCategoryFilter] = useState('all');
   const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 });

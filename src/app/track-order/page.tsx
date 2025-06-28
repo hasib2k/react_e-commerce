@@ -1,6 +1,9 @@
 'use client';
 
+'use client';
+
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Package, Search, MapPin, Clock, CheckCircle, Truck, Home, User } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -221,7 +224,7 @@ const TrackOrder: React.FC = () => {
                   <div className="space-y-3">
                     {sampleTrackingData.items.map((item, index) => (
                       <div key={index} className="flex items-center space-x-3">
-                        <img src={item.image} alt={item.name} className="w-12 h-12 rounded-lg object-cover" />
+                        <Image src={item.image} alt={item.name} width={48} height={48} className="w-12 h-12 rounded-lg object-cover" />
                         <div className="flex-1">
                           <div className="text-white font-semibold">{item.name}</div>
                           <div className="text-gray-400 text-sm">Qty: {item.quantity}</div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Search, MessageCircle, Phone, Mail, Book, HelpCircle, CheckCircle, Clock, User, ArrowRight } from 'lucide-react';
+import { Search, MessageCircle, Phone, Mail, Book, HelpCircle, CheckCircle, Clock, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import GlassCard from '@/components/GlassCard';

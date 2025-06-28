@@ -192,7 +192,7 @@ const CookiesPage: React.FC = () => {
                 Web analytics service to understand user behavior
               </p>
               <a href="#" className="text-primary hover:text-white transition-colors font-museo text-sm">
-                Learn more about Google's privacy policy
+                Learn more about Google&apos;s privacy policy
               </a>
             </div>
             
@@ -219,7 +219,7 @@ const CookiesPage: React.FC = () => {
             </h2>
             <p className="text-gray-300 font-museo mb-8 max-w-2xl mx-auto">
               If you have any questions about our use of cookies or this Cookie Policy, 
-              please don't hesitate to contact us.
+              please don&apos;t hesitate to contact us.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 

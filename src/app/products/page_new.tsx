@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Grid, List, Star, Heart, ShoppingCart } from 'lucide-react';
+import Image from 'next/image';
+import { Search, Grid, List, Star, Heart, ShoppingCart } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
 import Breadcrumb from '@/components/Breadcrumb';
 import Navbar from '@/components/Navbar';
@@ -330,9 +331,11 @@ const Products: React.FC = () => {
               {filteredProducts.map((product) => (
                 <GlassCard key={product.id} className="hover-lift group">
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <img
+                    <Image
                       src={product.image}
                       alt={product.name}
+                      width={300}
+                      height={256}
                       className="w-full h-48 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <button className="absolute top-4 right-4 p-2 bg-black/50 rounded-full text-white hover:text-primary transition-colors duration-300">
@@ -372,9 +375,11 @@ const Products: React.FC = () => {
               {filteredProducts.map((product) => (
                 <GlassCard key={product.id} className="hover-lift">
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                    <img
+                    <Image
                       src={product.image}
                       alt={product.name}
+                      width={192}
+                      height={192}
                       className="w-full sm:w-48 h-48 object-cover rounded-lg"
                     />
                     

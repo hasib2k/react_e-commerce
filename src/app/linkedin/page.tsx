@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import GlassCard from '@/components/GlassCard';
 import { Linkedin, Users, Briefcase, TrendingUp, Award, Building, Target, Globe } from 'lucide-react';
 
@@ -99,12 +100,12 @@ const LinkedInPage: React.FC = () => {
                 🚀 Exciting Partnership Announcement
               </h3>
               <p className="text-gray-300 font-museo mb-4">
-                We're thrilled to announce our strategic partnership with leading logistics providers to enhance 
+                We&apos;re thrilled to announce our strategic partnership with leading logistics providers to enhance 
                 our global shipping capabilities. This collaboration will reduce delivery times by 40% and expand 
                 our reach to 25 new countries. 
                 <br/><br/>
                 What does this mean for our customers? Faster deliveries, better tracking, and expanded international 
-                shipping options. We're committed to providing the best e-commerce experience possible.
+                shipping options. We&apos;re committed to providing the best e-commerce experience possible.
               </p>
               <div className="flex items-center space-x-6 text-gray-400 text-sm">
                 <span>👍 342 reactions</span>
@@ -124,10 +125,10 @@ const LinkedInPage: React.FC = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold font-museo text-white mb-3">
-                🌟 We're Hiring: Senior Full-Stack Developer
+                🌟 We&apos;re Hiring: Senior Full-Stack Developer
               </h3>
               <p className="text-gray-300 font-museo mb-4">
-                Join our innovative technology team! We're looking for a passionate Senior Full-Stack Developer 
+                Join our innovative technology team! We&apos;re looking for a passionate Senior Full-Stack Developer 
                 to help build the next generation of e-commerce solutions.
                 <br/><br/>
                 <strong>What we offer:</strong><br/>
@@ -222,7 +223,7 @@ const LinkedInPage: React.FC = () => {
             </h2>
             <p className="text-gray-300 font-museo mb-8 max-w-2xl mx-auto">
               Stay updated with our latest business developments, career opportunities, and industry insights. 
-              Let's build the future of e-commerce together!
+              Let&apos;s build the future of e-commerce together!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -234,12 +235,12 @@ const LinkedInPage: React.FC = () => {
                 <Linkedin className="w-5 h-5" />
                 <span>Follow Our Company</span>
               </a>
-              <a 
+              <Link 
                 href="/" 
                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-museo transition-all duration-300"
               >
                 Back to Store
-              </a>
+              </Link>
             </div>
           </div>
         </GlassCard>

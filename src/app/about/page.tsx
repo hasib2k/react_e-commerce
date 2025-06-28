@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Users, Target, Award, Heart, ShoppingBag, Truck, Shield, Star } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
 import Breadcrumb from '@/components/Breadcrumb';
@@ -133,9 +134,11 @@ const About: React.FC = () => {
                 </button>
               </div>
               <div className="relative">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=600&h=400&fit=crop"
                   alt="Our Story"
+                  width={600}
+                  height={400}
                   className="rounded-lg w-full h-80 object-cover"
                 />
               </div>
@@ -183,9 +186,11 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <GlassCard key={index} className="text-center hover-lift">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={128}
+                  height={128}
                   className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                 />
                 <h3 className="text-xl font-bold text-white font-museo mb-1">{member.name}</h3>

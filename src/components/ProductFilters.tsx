@@ -44,7 +44,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
           <h3 className="text-2xl font-bold text-white font-museo mb-2">
             Find Your Perfect <span className="text-primary">Product</span>
           </h3>
-          <p className="text-gray-300 font-museo">Use our advanced filters to discover exactly what you're looking for</p>
+          <p className="text-gray-300 font-museo">Use our advanced filters to discover exactly what you&apos;re looking for</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

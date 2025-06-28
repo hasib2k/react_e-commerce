@@ -205,17 +205,26 @@ const sampleProducts = [
 ];
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default function ProductDetailPage({ params }: PageProps) {
   const { dispatch } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const [resolvedParams, setResolvedParams] = useState<{ id: string } | null>(null);
 
-  const product = sampleProducts.find(p => p.id === parseInt(params.id));
+  React.useEffect(() => {
+    params.then(setResolvedParams);
+  }, [params]);
+
+  if (!resolvedParams) {
+    return <div>Loading...</div>;
+  }
+
+  const product = sampleProducts.find(p => p.id === parseInt(resolvedParams.id));
 
   if (!product) {
     notFound();

@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
 import GlassCard from '@/components/GlassCard';
 import { Star, Quote, ThumbsUp, MessageCircle, Award, Users, ShoppingBag, Heart } from 'lucide-react';
 
@@ -204,7 +207,7 @@ const ReviewsPage: React.FC = () => {
                 </div>
 
                 <p className="text-gray-300 font-museo leading-relaxed mb-4">
-                  "{review.review}"
+                  &quot;{review.review}&quot;
                 </p>
 
                 <div className="flex items-center justify-between text-sm text-gray-400">
@@ -236,7 +239,7 @@ const ReviewsPage: React.FC = () => {
               <div className="text-4xl mb-4">🚚</div>
               <h3 className="text-xl font-bold font-museo text-white mb-2">Fast Shipping</h3>
               <p className="text-gray-300 font-museo">
-                "Orders arrive quickly and packaging is excellent" - mentioned in 89% of reviews
+                &quot;Orders arrive quickly and packaging is excellent&quot; - mentioned in 89% of reviews
               </p>
             </div>
             
@@ -244,7 +247,7 @@ const ReviewsPage: React.FC = () => {
               <div className="text-4xl mb-4">🏆</div>
               <h3 className="text-xl font-bold font-museo text-white mb-2">Product Quality</h3>
               <p className="text-gray-300 font-museo">
-                "High-quality products that exceed expectations" - mentioned in 94% of reviews
+                &quot;High-quality products that exceed expectations&quot; - mentioned in 94% of reviews
               </p>
             </div>
             
@@ -252,7 +255,7 @@ const ReviewsPage: React.FC = () => {
               <div className="text-4xl mb-4">💬</div>
               <h3 className="text-xl font-bold font-museo text-white mb-2">Customer Support</h3>
               <p className="text-gray-300 font-museo">
-                "Helpful and responsive customer service team" - mentioned in 91% of reviews
+                &quot;Helpful and responsive customer service team&quot; - mentioned in 91% of reviews
               </p>
             </div>
           </div>
@@ -268,7 +271,7 @@ const ReviewsPage: React.FC = () => {
               Share Your <span className="text-yellow-400">Experience</span>
             </h2>
             <p className="text-gray-300 font-museo mb-8 max-w-2xl mx-auto">
-              Have you purchased from us? We'd love to hear about your experience! 
+              Have you purchased from us? We&apos;d love to hear about your experience! 
               Your feedback helps us improve and helps other customers make informed decisions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -278,12 +281,12 @@ const ReviewsPage: React.FC = () => {
               >
                 Write a Review
               </a>
-              <a 
+              <Link 
                 href="/products" 
                 className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-3 rounded-lg font-museo transition-all duration-300"
               >
                 Shop Our Products
-              </a>
+              </Link>
             </div>
           </div>
         </GlassCard>

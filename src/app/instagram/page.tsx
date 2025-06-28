@@ -1,6 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import GlassCard from '@/components/GlassCard';
-import { Instagram, Heart, MessageCircle, Send, Users, Camera, Video, Bookmark } from 'lucide-react';
+import { Instagram, Heart, MessageCircle, Users, Camera, Video, Bookmark } from 'lucide-react';
 
 const InstagramPage: React.FC = () => {
   return (
@@ -50,7 +51,7 @@ const InstagramPage: React.FC = () => {
         {/* What You'll See */}
         <GlassCard className="mb-12">
           <h2 className="text-3xl font-bold font-museo text-white mb-8 text-center">
-            What You'll See on Our <span className="text-pink-500">Instagram</span>
+            What You&apos;ll See on Our <span className="text-pink-500">Instagram</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -109,7 +110,7 @@ const InstagramPage: React.FC = () => {
                   <Bookmark className="w-5 h-5 text-gray-400" />
                 </div>
                 <p className="text-white font-museo text-sm">
-                  New premium wireless headphones with ANC! 🎧 What's your favorite color? 
+                  New premium wireless headphones with ANC! 🎧 What&apos;s your favorite color? 
                   <span className="text-pink-500">#TechLife #Audio</span>
                 </p>
               </div>
@@ -239,12 +240,12 @@ const InstagramPage: React.FC = () => {
                 <Instagram className="w-5 h-5" />
                 <span>Follow @ECommerceTech</span>
               </a>
-              <a 
+              <Link 
                 href="/" 
                 className="border-2 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white px-8 py-3 rounded-lg font-museo transition-all duration-300"
               >
                 Back to Store
-              </a>
+              </Link>
             </div>
           </div>
         </GlassCard>

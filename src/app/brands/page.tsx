@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import GlassCard from '@/components/GlassCard';
 import Navbar from '@/components/Navbar';
@@ -232,7 +234,7 @@ const BrandsContent: React.FC = () => {
             </h2>
             <p className="text-gray-300 font-museo mb-8 max-w-2xl mx-auto">
               Join our network of premium brands and reach millions of customers worldwide. 
-              Let's create something amazing together.
+              Let&apos;s create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 

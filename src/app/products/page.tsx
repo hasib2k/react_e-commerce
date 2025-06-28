@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Image from 'next/image';
 import { Search, Filter, Grid, List, Star, Heart, ShoppingCart, Smartphone, Headphones, Watch, Laptop, Mouse, Gamepad2, Camera, Speaker, Cable, Home, Car, Dumbbell, ChevronLeft, ChevronRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import GlassCard from '@/components/GlassCard';
 import Breadcrumb from '@/components/Breadcrumb';
 import { useCart, Product } from '@/context/CartContext';
 
 const Products: React.FC = () => {
-  const { state, dispatch } = useCart();
+  const { dispatch } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 });
@@ -663,27 +663,21 @@ const Products: React.FC = () => {
       <div className="relative z-10">
         <Navbar />
       
-      {/* Enhanced Breadcrumb with Title */}
-      <section className="px-4 pt-8 pb-4 relative z-10">
+      {/* Enhanced Breadcrumb */}
+      <section className="px-4 pt-8 pb-2 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="relative group">
             {/* Enhanced Glass Background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/8 to-white/5 backdrop-blur-3xl border border-primary/30 rounded-2xl shadow-2xl group-hover:border-primary/50 transition-all duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/8 to-white/5 backdrop-blur-3xl border border-primary/30 rounded-xl shadow-2xl group-hover:border-primary/50 transition-all duration-500"></div>
             
             {/* Subtle Animation Effects */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-              <div className="absolute top-3 left-6 w-2 h-2 bg-primary/40 rounded-full blur-sm animate-pulse"></div>
-              <div className="absolute bottom-3 right-6 w-1.5 h-1.5 bg-primary/30 rounded-full blur-sm animate-pulse delay-300"></div>
+              <div className="absolute top-2 left-4 w-1.5 h-1.5 bg-primary/40 rounded-full blur-sm animate-pulse"></div>
+              <div className="absolute bottom-2 right-4 w-1 h-1 bg-primary/30 rounded-full blur-sm animate-pulse delay-300"></div>
             </div>
             
-            <div className="relative p-4">
-              <div className="flex items-center justify-between">
-                <Breadcrumb items={[{ label: 'All Products' }]} />
-                <h1 className="text-lg sm:text-xl font-bold font-museo">
-                  <span className="text-white">All </span>
-                  <span className="text-primary">Products</span>
-                </h1>
-              </div>
+            <div className="relative p-3">
+              <Breadcrumb items={[{ label: 'All Products' }]} />
             </div>
           </div>
         </div>
@@ -777,7 +771,7 @@ const Products: React.FC = () => {
                 <h2 className="text-lg lg:text-xl font-bold font-museo text-white mb-1">
                   Filter & <span className="text-primary">Search</span>
                 </h2>
-                <p className="text-gray-300 font-museo text-xs">Find exactly what you're looking for</p>
+                <p className="text-gray-300 font-museo text-xs">Find exactly what you&apos;re looking for</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3">
@@ -981,9 +975,11 @@ const Products: React.FC = () => {
                   
                   <div className="relative overflow-hidden rounded-xl">
                     <div className="relative overflow-hidden">
-                      <img
+                      <Image
                         src={product.image}
                         alt={product.name}
+                        width={300}
+                        height={200}
                         className="w-full h-32 sm:h-36 object-cover transition-all duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1036,9 +1032,11 @@ const Products: React.FC = () => {
                   <div className="relative p-4">
                     <div className="flex flex-col sm:flex-row gap-4">
                       <div className="relative overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           src={product.image}
                           alt={product.name}
+                          width={128}
+                          height={128}
                           className="w-full sm:w-32 h-32 object-cover transition-all duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Search, Mouse, Keyboard, Cable, Monitor, ArrowRight, Star } from 'lucide-react';
+import { Search, Mouse, Keyboard, Cable, Monitor } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
 import Breadcrumb from '@/components/Breadcrumb';
 import ProductCard from '@/components/ProductCard';
 import { useCart, Product } from '@/context/CartContext';
 
 const AllAccessories: React.FC = () => {
-  const { state, dispatch } = useCart();
+  const { dispatch } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
   const [subCategoryFilter, setSubCategoryFilter] = useState('all');
   const [priceRange, setPriceRange] = useState({ min: 0, max: 500 });
