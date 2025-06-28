@@ -4,8 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Smartphone, Laptop, Headphones, Camera, Watch, Speaker, ArrowRight, Zap, Shield, Award, Star } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { CartProvider, useCart } from '@/context/CartContext';
 
 const ElectronicsContent: React.FC = () => {
@@ -80,7 +78,6 @@ const ElectronicsContent: React.FC = () => {
 
   return (
     <div>
-      <Navbar cartCount={state.itemCount} />
       <div className="min-h-screen py-20 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
@@ -248,7 +245,6 @@ const ElectronicsContent: React.FC = () => {
         </div>
       </div>
       
-      <Footer />
     </div>
   );
 };

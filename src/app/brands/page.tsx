@@ -2,8 +2,7 @@
 
 import React from 'react';
 import GlassCard from '@/components/GlassCard';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import { CartProvider, useCart } from '@/context/CartContext';
 import { Award, Users, Globe, TrendingUp, Shield, Star, Handshake, Target } from 'lucide-react';
 
@@ -73,17 +72,21 @@ const BrandsContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar cartCount={state.itemCount} />
-      <div className="py-16 px-4">
+      <div className="py-8 px-4">
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="mb-4">
+          <Breadcrumb items={[{ label: 'Brands' }]} />
+        </div>
+        
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="p-4 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border-2 border-primary/30">
-              <Handshake className="w-12 h-12 text-primary" />
+        <div className="text-center mb-8">
+          <div className="flex justify-center mb-3">
+            <div className="p-3 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border-2 border-primary/30">
+              <Handshake className="w-8 h-8 text-primary" />
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
             Our <span className="text-primary">Brand Partners</span>
           </h1>
           <p className="text-xl text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
@@ -255,7 +258,6 @@ const BrandsContent: React.FC = () => {
       </div>
       </div>
       
-      <Footer />
     </div>
   );
 };

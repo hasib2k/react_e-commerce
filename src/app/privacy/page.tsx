@@ -2,9 +2,8 @@
 
 import React from 'react';
 import { Shield, Eye, Lock, Users, Database, Bell, FileText, CheckCircle } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import GlassCard from '@/components/GlassCard';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useCart } from '@/context/CartContext';
 
 const PrivacyPolicy: React.FC = () => {
@@ -92,20 +91,20 @@ const PrivacyPolicy: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar cartCount={state.itemCount} />
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }]} />
       
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <GlassCard>
-            <Shield className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h1 className="text-5xl md:text-7xl font-bold font-museo text-white mb-6">
+      <section className="py-8 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <GlassCard className="py-6">
+            <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
               Privacy <span className="text-primary">Policy</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 font-museo max-w-4xl mx-auto">
+            <p className="text-lg text-gray-300 mb-4 font-museo max-w-3xl mx-auto">
               Your privacy is important to us. This policy explains how we collect, use, and protect your personal information.
             </p>
-            <div className="text-gray-400 font-museo">
+            <div className="text-gray-400 font-museo text-sm">
               Last updated: December 27, 2024
             </div>
           </GlassCard>
@@ -113,9 +112,9 @@ const PrivacyPolicy: React.FC = () => {
       </section>
 
       {/* Privacy Principles */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold font-museo text-white text-center mb-12">
+      <section className="py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold font-museo text-white text-center mb-6">
             Our Privacy <span className="text-primary">Principles</span>
           </h2>
           
@@ -367,7 +366,6 @@ const PrivacyPolicy: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

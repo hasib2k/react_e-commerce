@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare, HeadphonesIcon } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
 import Breadcrumb from '@/components/Breadcrumb';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { useCart } from '@/context/CartContext';
 
 const Contact: React.FC = () => {
@@ -83,7 +81,6 @@ const Contact: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar cartCount={state.itemCount} />
       
       {/* Breadcrumb */}
       <section className="px-4 pt-6">
@@ -234,7 +231,6 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

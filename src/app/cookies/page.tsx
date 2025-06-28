@@ -1,28 +1,31 @@
 import React from 'react';
 import GlassCard from '@/components/GlassCard';
+import Breadcrumb from '@/components/Breadcrumb';
 import { Cookie, Shield, Settings, Info, Eye, FileText } from 'lucide-react';
 
 const CookiesPage: React.FC = () => {
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="p-4 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border-2 border-primary/30">
-              <Cookie className="w-12 h-12 text-primary" />
+    <div className="min-h-screen bg-background">
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Cookie Policy' }]} />
+      <div className="py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <div className="p-3 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30">
+                <Cookie className="w-8 h-8 text-primary" />
+              </div>
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
+              Cookie <span className="text-primary">Policy</span>
+            </h1>
+            <p className="text-lg text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
+              Learn how we use cookies to enhance your browsing experience and improve our services
+            </p>
+            <div className="mt-4 inline-flex items-center space-x-2 text-gray-400 font-museo text-sm">
+              <span>Last updated: December 2024</span>
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
-            Cookie <span className="text-primary">Policy</span>
-          </h1>
-          <p className="text-xl text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
-            Learn how we use cookies to enhance your browsing experience and improve our services
-          </p>
-          <div className="mt-8 inline-flex items-center space-x-2 text-gray-400 font-museo">
-            <span>Last updated: December 2024</span>
-          </div>
-        </div>
 
         {/* Cookie Types Section */}
         <GlassCard className="mb-12">
@@ -237,6 +240,7 @@ const CookiesPage: React.FC = () => {
             </div>
           </div>
         </GlassCard>
+        </div>
       </div>
     </div>
   );

@@ -1,23 +1,26 @@
 import React from 'react';
 import Link from 'next/link';
 import GlassCard from '@/components/GlassCard';
+import Breadcrumb from '@/components/Breadcrumb';
 import { Linkedin, Users, Briefcase, TrendingUp, Award, Building, Target, Globe } from 'lucide-react';
 
 const LinkedInPage: React.FC = () => {
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="p-4 rounded-full bg-gradient-to-r from-blue-600/20 to-blue-700/20 border-2 border-blue-600/30">
-              <Linkedin className="w-12 h-12 text-blue-600" />
+    <div className="min-h-screen bg-background">
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'LinkedIn' }]} />
+      <div className="py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <div className="p-3 rounded-full bg-gradient-to-r from-blue-600/20 to-blue-700/20 border border-blue-600/30">
+                <Linkedin className="w-8 h-8 text-blue-600" />
+              </div>
             </div>
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
-            Connect on <span className="text-blue-600">LinkedIn</span>
-          </h1>
-          <p className="text-xl text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
+              Connect on <span className="text-blue-600">LinkedIn</span>
+            </h1>
+            <p className="text-lg text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
             Join our professional network for industry insights, company updates, and business opportunities
           </p>
         </div>
@@ -244,6 +247,7 @@ const LinkedInPage: React.FC = () => {
             </div>
           </div>
         </GlassCard>
+        </div>
       </div>
     </div>
   );

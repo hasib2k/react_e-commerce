@@ -4,8 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Watch, Gem, ShoppingBag, Glasses, Crown, Gift, ArrowRight, Sparkles, Heart, Truck, Star } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import { CartProvider, useCart } from '@/context/CartContext';
 
 const AccessoriesContent: React.FC = () => {
@@ -103,15 +102,19 @@ const AccessoriesContent: React.FC = () => {
 
   return (
     <div>
-      <Navbar cartCount={state.itemCount} />
-      <div className="min-h-screen py-20 px-4">
+      <div className="min-h-screen py-8 px-4">
         <div className="max-w-7xl mx-auto">
+          {/* Breadcrumb */}
+          <div className="mb-4">
+            <Breadcrumb items={[{ label: 'Accessories' }]} />
+          </div>
+          
           {/* Header Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold font-museo text-white mb-6">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
               <span className="text-primary">Accessories</span> Collection
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-museo leading-relaxed">
+            <p className="text-sm text-gray-300 max-w-2xl mx-auto font-museo leading-relaxed">
               Complete your style with our curated selection of premium accessories. 
               From elegant jewelry to functional bags, find the perfect pieces to express your personality.
             </p>
@@ -265,7 +268,6 @@ const AccessoriesContent: React.FC = () => {
         </div>
       </div>
       
-      <Footer />
     </div>
   );
 };

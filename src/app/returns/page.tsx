@@ -2,9 +2,8 @@
 
 import React from 'react';
 import { RotateCcw, Package, Shield, Clock, CheckCircle, AlertCircle, RefreshCw, ArrowRight } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import GlassCard from '@/components/GlassCard';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useCart } from '@/context/CartContext';
 
 const ReturnsExchanges: React.FC = () => {
@@ -114,20 +113,20 @@ const ReturnsExchanges: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar cartCount={state.itemCount} />
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Returns & Exchanges' }]} />
       
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <GlassCard>
-            <RotateCcw className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h1 className="text-5xl md:text-7xl font-bold font-museo text-white mb-6">
+      <section className="py-8 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <GlassCard className="py-6">
+            <RotateCcw className="w-10 h-10 text-primary mx-auto mb-4" />
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
               Returns & <span className="text-primary">Exchanges</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 font-museo max-w-4xl mx-auto">
+            <p className="text-lg text-gray-300 mb-4 font-museo max-w-3xl mx-auto">
               Easy returns and exchanges with our 30-day satisfaction guarantee. Shop with confidence knowing you can return or exchange any item hassle-free.
             </p>
-            <button className="bg-primary hover:bg-primary/80 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
+            <button className="bg-primary hover:bg-primary/80 text-white px-6 py-2 rounded-lg font-bold text-sm transition-all duration-300 transform hover:scale-105">
               Start a Return
             </button>
           </GlassCard>
@@ -135,26 +134,26 @@ const ReturnsExchanges: React.FC = () => {
       </section>
 
       {/* Return Process */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold font-museo text-white text-center mb-12">
+      <section className="py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold font-museo text-white text-center mb-6">
             Return <span className="text-primary">Process</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {returnProcess.map((step, index) => (
               <div key={index} className="relative">
-                <GlassCard className="text-center hover-lift border-2 border-primary/30">
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">
+                <GlassCard className="text-center hover-lift border border-primary/30 py-4">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
                     {step.step}
                   </div>
-                  <step.icon className="w-12 h-12 text-primary mx-auto mb-4 mt-4" />
-                  <h3 className="text-xl font-bold text-white font-museo mb-3">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
+                  <step.icon className="w-8 h-8 text-primary mx-auto mb-3 mt-2" />
+                  <h3 className="text-lg font-bold text-white font-museo mb-2">{step.title}</h3>
+                  <p className="text-gray-300 text-sm">{step.description}</p>
                 </GlassCard>
                 {index < returnProcess.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <ArrowRight className="w-6 h-6 text-primary" />
+                  <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2">
+                    <ArrowRight className="w-4 h-4 text-primary" />
                   </div>
                 )}
               </div>
@@ -164,18 +163,18 @@ const ReturnsExchanges: React.FC = () => {
       </section>
 
       {/* Return Policy Highlights */}
-      <section className="py-16 px-4 bg-black/20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold font-museo text-white text-center mb-12">
+      <section className="py-8 px-4 bg-black/20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold font-museo text-white text-center mb-6">
             Our <span className="text-primary">Policy</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {returnPolicy.map((policy, index) => (
-              <GlassCard key={index} className="text-center hover-lift">
-                <policy.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white font-museo mb-3">{policy.title}</h3>
-                <p className="text-gray-300">{policy.description}</p>
+              <GlassCard key={index} className="text-center hover-lift py-4">
+                <policy.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h3 className="text-lg font-bold text-white font-museo mb-2">{policy.title}</h3>
+                <p className="text-gray-300 text-sm">{policy.description}</p>
               </GlassCard>
             ))}
           </div>
@@ -270,29 +269,27 @@ const ReturnsExchanges: React.FC = () => {
       </section>
 
       {/* Start Return CTA */}
-      <section className="py-16 px-4 bg-black/20">
+      <section className="py-8 px-4 bg-black/20">
         <div className="max-w-4xl mx-auto text-center">
-          <GlassCard className="border-2 border-primary/30">
-            <Package className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h2 className="text-4xl font-bold font-museo text-white mb-4">
+          <GlassCard className="border border-primary/30 py-6">
+            <Package className="w-8 h-8 text-primary mx-auto mb-4" />
+            <h2 className="text-2xl font-bold font-museo text-white mb-3">
               Ready to Start Your <span className="text-primary">Return?</span>
             </h2>
-            <p className="text-xl text-gray-300 mb-8 font-museo">
+            <p className="text-lg text-gray-300 mb-4 font-museo">
               Have your order number ready and we&apos;ll guide you through the process step by step.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-primary hover:bg-primary/80 text-white px-8 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button className="bg-primary hover:bg-primary/80 text-white px-6 py-2 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 text-sm">
                 Start Return Request
               </button>
-              <button className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-bold transition-all duration-300">
+              <button className="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-bold transition-all duration-300 text-sm">
                 Track Existing Return
               </button>
             </div>
           </GlassCard>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

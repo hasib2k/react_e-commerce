@@ -2,9 +2,8 @@
 
 import React, { useState } from 'react';
 import { Ruler, User, Shirt, Footprints, Watch, Info, ArrowRight } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import GlassCard from '@/components/GlassCard';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useCart } from '@/context/CartContext';
 
 const SizeGuide: React.FC = () => {
@@ -87,17 +86,17 @@ const SizeGuide: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar cartCount={state.itemCount} />
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Size Guide' }]} />
       
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <GlassCard>
-            <Ruler className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h1 className="text-5xl md:text-7xl font-bold font-museo text-white mb-6">
+      <section className="py-8 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <GlassCard className="py-6">
+            <Ruler className="w-10 h-10 text-primary mx-auto mb-4" />
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
               Size <span className="text-primary">Guide</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 font-museo max-w-4xl mx-auto">
+            <p className="text-lg text-gray-300 mb-4 font-museo max-w-3xl mx-auto">
               Find your perfect fit with our comprehensive sizing charts and measurement guides for all product categories.
             </p>
           </GlassCard>
@@ -105,15 +104,15 @@ const SizeGuide: React.FC = () => {
       </section>
 
       {/* Category Navigation */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center mb-12">
-            <div className="flex space-x-4 p-2 bg-white/10 rounded-lg backdrop-blur-sm border border-primary/30">
+      <section className="py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center mb-6">
+            <div className="flex space-x-2 p-1 bg-white/10 rounded-lg backdrop-blur-sm border border-primary/30">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-museo font-bold transition-all duration-300 ${
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-museo font-bold transition-all duration-300 text-sm ${
                     activeCategory === category.id
                       ? 'bg-primary text-white'
                       : 'text-gray-300 hover:text-primary hover:bg-primary/20'
@@ -383,7 +382,6 @@ const SizeGuide: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

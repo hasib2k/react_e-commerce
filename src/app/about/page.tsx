@@ -5,8 +5,6 @@ import Image from 'next/image';
 import { Users, Target, Award, Heart, ShoppingBag, Truck, Shield, Star } from 'lucide-react';
 import GlassCard from '@/components/GlassCard';
 import Breadcrumb from '@/components/Breadcrumb';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { useCart } from '@/context/CartContext';
 
 const About: React.FC = () => {
@@ -46,26 +44,25 @@ const About: React.FC = () => {
     {
       name: 'Sarah Johnson',
       role: 'CEO & Founder',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=300&h=300&fit=crop&crop=face',
+      image: 'https://via.placeholder.com/300x300/1a1a2e/ffffff?text=SJ',
       description: 'Visionary leader with 10+ years in e-commerce'
     },
     {
       name: 'Michael Chen',
       role: 'CTO',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
+      image: 'https://via.placeholder.com/300x300/16213e/ffffff?text=MC',
       description: 'Tech expert passionate about user experience'
     },
     {
       name: 'Emily Davis',
       role: 'Head of Design',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
+      image: 'https://via.placeholder.com/300x300/0f3460/ffffff?text=ED',
       description: 'Creative designer focused on beautiful interfaces'
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar cartCount={state.itemCount} />
       
       {/* Breadcrumb */}
       <section className="px-4 pt-6">
@@ -135,7 +132,7 @@ const About: React.FC = () => {
               </div>
               <div className="relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=600&h=400&fit=crop"
+                  src="https://via.placeholder.com/600x400/533483/ffffff?text=Our+Office"
                   alt="Our Story"
                   width={600}
                   height={400}
@@ -202,7 +199,6 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

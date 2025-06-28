@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import GlassCard from '@/components/GlassCard';
+import Breadcrumb from '@/components/Breadcrumb';
 import { Star, Quote, ThumbsUp, MessageCircle, Award, Users, ShoppingBag, Heart } from 'lucide-react';
 
 const ReviewsPage: React.FC = () => {
@@ -95,38 +96,40 @@ const ReviewsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="p-4 rounded-full bg-gradient-to-r from-yellow-400/20 to-orange-500/20 border-2 border-yellow-400/30">
-              <Star className="w-12 h-12 text-yellow-400" />
-            </div>
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
-            Customer <span className="text-yellow-400">Reviews</span>
-          </h1>
-          <p className="text-xl text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
-            Discover what our customers are saying about their experience with our products and service
-          </p>
-        </div>
-
-        {/* Review Summary */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {/* Overall Rating */}
-          <GlassCard>
-            <div className="text-center">
-              <h3 className="text-2xl font-bold font-museo text-white mb-4">Overall Rating</h3>
-              <div className="text-6xl font-bold font-museo text-yellow-400 mb-2">4.9</div>
-              <div className="flex justify-center mb-2">
-                {renderStars(5)}
+    <div className="min-h-screen bg-background">
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Customer Reviews' }]} />
+      <div className="py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <div className="p-3 rounded-full bg-gradient-to-r from-yellow-400/20 to-orange-500/20 border border-yellow-400/30">
+                <Star className="w-8 h-8 text-yellow-400" />
               </div>
-              <p className="text-gray-300 font-museo">Based on 3,195 reviews</p>
             </div>
-          </GlassCard>
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
+              Customer <span className="text-yellow-400">Reviews</span>
+            </h1>
+            <p className="text-lg text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
+              Discover what our customers are saying about their experience with our products and service
+            </p>
+          </div>
 
-          {/* Stats */}
+          {/* Review Summary */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
+            {/* Overall Rating */}
+            <GlassCard className="py-4">
+              <div className="text-center">
+                <h3 className="text-lg font-bold font-museo text-white mb-3">Overall Rating</h3>
+                <div className="text-4xl font-bold font-museo text-yellow-400 mb-2">4.9</div>
+                <div className="flex justify-center mb-2">
+                  {renderStars(5)}
+                </div>
+                <p className="text-gray-300 font-museo text-sm">Based on 3,195 reviews</p>
+              </div>
+            </GlassCard>
+
+            {/* Stats */}
           <GlassCard>
             <div className="grid grid-cols-2 gap-4 text-center">
               <div>
@@ -290,6 +293,7 @@ const ReviewsPage: React.FC = () => {
             </div>
           </div>
         </GlassCard>
+        </div>
       </div>
     </div>
   );

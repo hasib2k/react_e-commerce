@@ -3,8 +3,6 @@
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { Search, Filter, Grid, List, Star, Heart, ShoppingCart, Smartphone, Headphones, Watch, Laptop, Mouse, Gamepad2, Camera, Speaker, Cable, Home, Car, Dumbbell, ChevronLeft, ChevronRight } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
 import { useCart, Product } from '@/context/CartContext';
 
@@ -661,7 +659,6 @@ const Products: React.FC = () => {
       </div>
       
       <div className="relative z-10">
-        <Navbar />
       
       {/* Enhanced Breadcrumb */}
       <section className="px-4 pt-8 pb-2 relative z-10">
@@ -1159,8 +1156,6 @@ const Products: React.FC = () => {
         </div>
       </section>
       
-      {/* Footer */}
-      <Footer />
       </div>
     </div>
   );

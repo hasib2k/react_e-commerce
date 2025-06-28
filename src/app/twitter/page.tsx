@@ -1,33 +1,36 @@
 import React from 'react';
 import Link from 'next/link';
 import GlassCard from '@/components/GlassCard';
+import Breadcrumb from '@/components/Breadcrumb';
 import { Twitter, MessageCircle, Repeat2, Heart, TrendingUp, Zap, Users } from 'lucide-react';
 
 const TwitterPage: React.FC = () => {
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="p-4 rounded-full bg-gradient-to-r from-sky-400/20 to-sky-500/20 border-2 border-sky-400/30">
-              <Twitter className="w-12 h-12 text-sky-400" />
+    <div className="min-h-screen bg-background">
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Twitter' }]} />
+      <div className="py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <div className="p-3 rounded-full bg-gradient-to-r from-sky-400/20 to-sky-500/20 border border-sky-400/30">
+                <Twitter className="w-8 h-8 text-sky-400" />
+              </div>
             </div>
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
+              Follow Us on <span className="text-sky-400">Twitter</span>
+            </h1>
+            <p className="text-lg text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
+              Get real-time updates, tech news, and instant customer support on our Twitter channel
+            </p>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
-            Follow Us on <span className="text-sky-400">Twitter</span>
-          </h1>
-          <p className="text-xl text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
-            Get real-time updates, tech news, and instant customer support on our Twitter channel
-          </p>
-        </div>
 
-        {/* Twitter Stats */}
-        <GlassCard className="mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <Users className="w-10 h-10 text-sky-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold font-museo text-white mb-2">18.5K</h3>
+          {/* Twitter Stats */}
+          <GlassCard className="mb-6 py-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+              <div>
+                <Users className="w-8 h-8 text-sky-400 mx-auto mb-3" />
+                <h3 className="text-xl font-bold font-museo text-white mb-1">18.5K</h3>
               <p className="text-gray-300 font-museo">Followers</p>
             </div>
             <div>
@@ -225,6 +228,7 @@ const TwitterPage: React.FC = () => {
             </div>
           </div>
         </GlassCard>
+        </div>
       </div>
     </div>
   );

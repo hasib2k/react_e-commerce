@@ -1,33 +1,36 @@
 import React from 'react';
 import Link from 'next/link';
 import GlassCard from '@/components/GlassCard';
+import Breadcrumb from '@/components/Breadcrumb';
 import { Instagram, Heart, MessageCircle, Users, Camera, Video, Bookmark } from 'lucide-react';
 
 const InstagramPage: React.FC = () => {
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="p-4 rounded-full bg-gradient-to-r from-pink-500/20 to-purple-500/20 border-2 border-pink-500/30">
-              <Instagram className="w-12 h-12 text-pink-500" />
+    <div className="min-h-screen bg-background">
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Instagram' }]} />
+      <div className="py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <div className="p-3 rounded-full bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30">
+                <Instagram className="w-8 h-8 text-pink-500" />
+              </div>
             </div>
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
+              Follow Us on <span className="text-pink-500">Instagram</span>
+            </h1>
+            <p className="text-lg text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
+              Discover our products through stunning visuals, behind-the-scenes content, and user-generated posts
+            </p>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold font-museo text-white mb-6">
-            Follow Us on <span className="text-pink-500">Instagram</span>
-          </h1>
-          <p className="text-xl text-gray-300 font-museo max-w-3xl mx-auto leading-relaxed">
-            Discover our products through stunning visuals, behind-the-scenes content, and user-generated posts
-          </p>
-        </div>
 
-        {/* Instagram Stats */}
-        <GlassCard className="mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <Users className="w-10 h-10 text-pink-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold font-museo text-white mb-2">32.8K</h3>
+          {/* Instagram Stats */}
+          <GlassCard className="mb-6 py-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+              <div>
+                <Users className="w-8 h-8 text-pink-500 mx-auto mb-3" />
+                <h3 className="text-xl font-bold font-museo text-white mb-1">32.8K</h3>
               <p className="text-gray-300 font-museo">Followers</p>
             </div>
             <div>
@@ -249,6 +252,7 @@ const InstagramPage: React.FC = () => {
             </div>
           </div>
         </GlassCard>
+        </div>
       </div>
     </div>
   );

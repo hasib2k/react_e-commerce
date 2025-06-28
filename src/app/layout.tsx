@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { CartProvider } from '@/context/CartContext';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: "Buyble - Modern E-commerce Platform",
@@ -24,7 +26,13 @@ export default function RootLayout({
       </head>
       <body className="antialiased" suppressHydrationWarning>
         <CartProvider>
-          {children}
+          <div className="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10">
+            <Navbar />
+            <main className="container mx-auto px-2 md:px-4 max-w-7xl">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </CartProvider>
       </body>
     </html>

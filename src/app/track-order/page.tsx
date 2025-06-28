@@ -1,13 +1,10 @@
 'use client';
 
-'use client';
-
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Package, Search, MapPin, Clock, CheckCircle, Truck, Home, User } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import GlassCard from '@/components/GlassCard';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useCart } from '@/context/CartContext';
 
 const TrackOrder: React.FC = () => {
@@ -22,8 +19,8 @@ const TrackOrder: React.FC = () => {
     status: 'In Transit',
     estimatedDelivery: 'Tomorrow, Dec 28',
     items: [
-      { name: 'Premium Wireless Headphones', quantity: 1, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&h=100&fit=crop' },
-      { name: 'Smart Watch Pro', quantity: 1, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&h=100&fit=crop' }
+      { name: 'Premium Wireless Headphones', quantity: 1, image: 'https://via.placeholder.com/100x100/1a1a2e/ffffff?text=Headphones' },
+      { name: 'Smart Watch Pro', quantity: 1, image: 'https://via.placeholder.com/100x100/16213e/ffffff?text=Watch' }
     ],
     trackingHistory: [
       {
@@ -119,17 +116,17 @@ const TrackOrder: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar cartCount={state.itemCount} />
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Track Order' }]} />
       
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <GlassCard>
-            <Package className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h1 className="text-5xl md:text-7xl font-bold font-museo text-white mb-6">
+      <section className="py-8 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <GlassCard className="py-6">
+            <Package className="w-10 h-10 text-primary mx-auto mb-4" />
+            <h1 className="text-3xl md:text-4xl font-bold font-museo text-white mb-3">
               Track Your <span className="text-primary">Order</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 font-museo max-w-4xl mx-auto">
+            <p className="text-lg text-gray-300 mb-4 font-museo max-w-3xl mx-auto">
               Stay updated on your order status with real-time tracking information and delivery updates.
             </p>
           </GlassCard>
@@ -137,10 +134,10 @@ const TrackOrder: React.FC = () => {
       </section>
 
       {/* Order Tracking Form */}
-      <section className="py-16 px-4">
+      <section className="py-8 px-4">
         <div className="max-w-4xl mx-auto">
-          <GlassCard className="border-2 border-primary/30">
-            <div className="text-center mb-8">
+          <GlassCard className="border border-primary/30 py-6">
+            <div className="text-center mb-6">
               <Search className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold font-museo text-white mb-4">
                 Enter Your Order Details
@@ -341,7 +338,6 @@ const TrackOrder: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

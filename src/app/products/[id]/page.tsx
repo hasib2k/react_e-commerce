@@ -499,47 +499,47 @@ export default function ProductDetailPage({ params }: PageProps) {
                 <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
                 Specifications
               </h3>
-              <dl className="space-y-3">
+              <dl className="space-y-2">
                 {Object.entries(product.specifications).map(([key, value]) => (
-                  <div key={key} className="flex justify-between items-center py-2 border-b border-white/10">
-                    <dt className="text-gray-400 font-museo">{key}:</dt>
-                    <dd className="text-white font-museo font-semibold">{value}</dd>
+                  <div key={key} className="flex justify-between items-center py-1 border-b border-white/10">
+                    <dt className="text-gray-400 font-museo text-xs">{key}:</dt>
+                    <dd className="text-white font-museo font-semibold text-xs">{value}</dd>
                   </div>
                 ))}
               </dl>
             </GlassCard>
 
             {/* Warranty & Support */}
-            <GlassCard className="lg:col-span-1">
-              <h3 className="text-2xl font-bold text-white font-museo mb-6 flex items-center">
-                <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+            <GlassCard className="lg:col-span-1 py-4">
+              <h3 className="text-lg font-bold text-white font-museo mb-3 flex items-center">
+                <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
                 Warranty & Support
               </h3>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between py-3 border-b border-white/10">
-                  <span className="text-gray-400 font-museo">Warranty:</span>
-                  <span className="text-white font-museo font-semibold">{product.warranty}</span>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between py-2 border-b border-white/10">
+                  <span className="text-gray-400 font-museo text-xs">Warranty:</span>
+                  <span className="text-white font-museo font-semibold text-xs">{product.warranty}</span>
                 </div>
-                <div className="grid grid-cols-1 gap-4 mt-6">
+                <div className="grid grid-cols-1 gap-2 mt-3">
                   <div className="flex items-center">
-                    <Truck className="w-6 h-6 text-primary mr-3" />
+                    <Truck className="w-4 h-4 text-primary mr-2" />
                     <div>
-                      <div className="text-white font-museo font-bold">Free Shipping</div>
-                      <div className="text-gray-400 text-sm">Orders over $50</div>
+                      <div className="text-white font-museo font-bold text-xs">Free Shipping</div>
+                      <div className="text-gray-400 text-xs">Orders over $50</div>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <Shield className="w-6 h-6 text-primary mr-3" />
+                    <Shield className="w-4 h-4 text-primary mr-2" />
                     <div>
-                      <div className="text-white font-museo font-bold">Protection Plan</div>
-                      <div className="text-gray-400 text-sm">Extended coverage</div>
+                      <div className="text-white font-museo font-bold text-xs">Protection Plan</div>
+                      <div className="text-gray-400 text-xs">Extended coverage</div>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <RotateCcw className="w-6 h-6 text-primary mr-3" />
+                    <RotateCcw className="w-4 h-4 text-primary mr-2" />
                     <div>
-                      <div className="text-white font-museo font-bold">Returns</div>
-                      <div className="text-gray-400 text-sm">60 day policy</div>
+                      <div className="text-white font-museo font-bold text-xs">Returns</div>
+                      <div className="text-gray-400 text-xs">60 day policy</div>
                     </div>
                   </div>
                 </div>
